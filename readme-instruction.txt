@@ -1,0 +1,1 @@
+type 'quit' to quit the game.
