@@ -22,7 +22,7 @@ Items:
     2. Golden Potion (+20HP)
     3. Platinum Potion (MAX HP)
 
-Monster:
+io.muic.ooc.Monsters.Monster:
 There are 3 ranks of monsters.
 1. 'Monmon' - monster rank 1 (10HP). Drop normal potion. and sometimes Excalibur.
 2. 'Minor Mon' - monster rank 2 (20HP). Drop Normal and GOlden potion. Drop Excalibur and rarely Lightsaber.

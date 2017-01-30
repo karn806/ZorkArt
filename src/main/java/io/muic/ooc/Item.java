@@ -1,5 +1,8 @@
+package io.muic.ooc;
+
 /**
  * Created by karn806 on 1/27/17.
  */
-public class Monster {
+public class Item {
+
 }
