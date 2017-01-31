@@ -1,5 +1,8 @@
 package io.muic.ooc;
 
+import io.muic.ooc.Commands.Command;
+import io.muic.ooc.Commands.CommandParser;
+
 import java.util.Scanner;
 
 /**
@@ -19,24 +22,24 @@ public class ZorkGame {
         System.out.println("Zork: Welcome to ZorkArt!");
         System.out.println("Zork: What's your name?");
         String name = scanner.nextLine();
-        System.out.println("Zork: Hello "+name);
+        System.out.println("Zork: Hello, "+name);
         Player player = new Player();
         initialize(player, name);
 
         boolean quit = false;
-
         while (!quit) {
             System.out.print(name+": ");
-            String cmd = scanner.nextLine();
-            if (cmd.equals("player info")){
-                System.out.println("ATK: "+player.getAtk());
-                System.out.println("Exp: "+player.getExp());
-                System.out.println("HP: "+player.getHp());
-            }
-            if (cmd.equals("quit")){
-                quit = true;
+            String commandLine = scanner.nextLine();
+            Command command = CommandParser.getCommand(commandLine);
+            if (null == command) {
+                System.out.println("Unknown command [" + commandLine + "]. Available commands: player info, quit.");
+            } else {
+                command.apply(player);
             }
         }
+
     }
+
+
 
 }

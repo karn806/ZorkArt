@@ -14,8 +14,8 @@ package io.muic.ooc;
     6. io.muic.ooc.Map.Room
     7. GameMap
     8. CommandParser
-    9. io.muic.ooc.Command
-        - many sub-class of io.muic.ooc.Command
+    9. io.muic.ooc.Commands.Command
+        - many sub-class of io.muic.ooc.Commands.Command
 */
 
 public class ZorkRunner {
