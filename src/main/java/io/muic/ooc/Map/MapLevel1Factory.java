@@ -11,7 +11,19 @@ import java.util.ArrayList;
  * Created by karn806 on 1/30/17.
  */
 
-public class MapLevel1Factory implements MapFactory{
+public class MapLevel1Factory extends GameMap implements MapFactory{
+
+    private int numMonster = 2;
+
+    @Override
+    public int getNumMonster() {
+        return numMonster;
+    }
+
+    @Override
+    public void setNumMonster(int numMonster) {
+        this.numMonster = numMonster;
+    }
 
     @Override
     public ArrayList<Room> createRoom(){
@@ -28,7 +40,7 @@ public class MapLevel1Factory implements MapFactory{
         C.setWestExit(C);
         return rooms;
     }
-
+    @Override
     public Monster createMonster() {
         Monster monster = new Monster();
         monster.setAtk(2);

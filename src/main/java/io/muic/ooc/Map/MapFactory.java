@@ -14,4 +14,5 @@ public interface MapFactory {
     Monster createMonster();
     Potion createPotions();
     Weapon createWeapon();
+
 }

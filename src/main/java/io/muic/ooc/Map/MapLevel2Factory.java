@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by karn806 on 2/3/17.
  */
-public class MapLevel2Factory implements MapFactory {
+public class MapLevel2Factory extends GameMap implements MapFactory {
 
     @Override
     public ArrayList<Room> createRoom(){

@@ -9,6 +9,7 @@ import io.muic.ooc.Map.Room;
 import io.muic.ooc.Monsters.Monster;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,16 +17,22 @@ import java.util.Scanner;
  */
 public class ZorkGame {
 
+    Random random = new Random();
+
     public void initialize(Player player, String name, ArrayList<Room> rooms, Monster monster,
                            Item potions, Item weapon){
         player.setAtk(10);
         player.setExp(0);
         player.setHp(30);
         player.setName(name);
-        player.setCurrentRoom(rooms.get(0));
+        // random starting room
+        Room room = rooms.get(random.nextInt(rooms.size()));
+        player.setCurrentRoom(room);
+        // initial weapon for player
         player.setBag(weapon);
         rooms.get(0).setPotions((Potion) potions);
         rooms.get(0).setMonsters(monster);
+        rooms.get(1).setPotions((Potion) potions);
         rooms.get(2).setPotions((Potion) potions);
         rooms.get(2).setMonsters(monster);
     }
@@ -39,7 +46,6 @@ public class ZorkGame {
         System.out.println("Zork: Hello, "+name);
         Player player = new Player();
         MapLevel1Factory level1 = new MapLevel1Factory();
-
         ArrayList<Room> rooms = level1.createRoom();
         Monster monster = level1.createMonster();
         Item potion = level1.createPotions();

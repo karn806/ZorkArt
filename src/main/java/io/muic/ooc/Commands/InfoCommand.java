@@ -16,11 +16,10 @@ public class InfoCommand implements Command {
 
     @Override
     public void apply(Player player, String args) {
-//        System.out.println(args);
-
 
         if (args==null){
-            System.out.println("Please type in argument after 'info' -- 'room', 'player')");
+            System.out.println("Please type in argument after command 'info'");
+            System.out.println("Hint: (info) player, (info) room");
         }
         else if (args.equals("player")){
             System.out.println("   Name: "+player.getName());
