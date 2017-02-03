@@ -24,29 +24,27 @@ public class AttackCommand implements Command {
                 int playerATK = player.getAtk();
                 int playerHP = player.getHp();
                 int playerEXP = player.getExp();
-                mon.setHp(playerATK-monHP);
+                mon.setHp(monHP-playerATK);
 
                 if (mon.getHp()!=0){
-                    player.setHp(monATK-playerHP);
-                    System.out.println("Your HP: "+player.getHp());
-                    System.out.println("Monster HP: "+mon.getHp());
+                    player.setHp(playerHP-monATK);
+                    System.out.println("  Your HP: "+player.getHp());
+                    System.out.println("  Monster HP: "+mon.getHp());
                     if (playerHP==0){
                         System.out.println("You died.");
                         System.exit(0);
                     }
                 } else {
                     room.getMonsters().remove(0);
-                    System.out.println("You killed the monster. Yay!!");
-                    System.out.println("Gained 2 EXP");
+                    System.out.println("  You killed the monster. Yay!!");
+                    System.out.println("  Gained 2 EXP");
                     player.setExp(playerEXP+2);
                     level1.setNumMonster(numMon-1);
                     if (level1.getNumMonster()==0){
-                        System.out.println("Congrats! You have killed all the monster");
-                        System.out.println("Now you can proceed to the next level!!");
+                        System.out.println("  Congrats! You have killed all the monster");
+                        System.out.println("  Now you can proceed to the next level!!");
                         System.exit(0);
                     }
-
-
 
                 }
             }

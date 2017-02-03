@@ -15,19 +15,7 @@ public class Room {
     private Room eastExit = null;
 //    private ArrayList<Item> items = new ArrayList<Item>();
     private ArrayList<Potion> potions = new ArrayList<Potion>();
-    private ArrayList<Weapon> weapons = new ArrayList<Weapon>();
     private ArrayList<Monster> monsters = new ArrayList<Monster>();
-
-    public ArrayList<Weapon> getWeapons() {
-        for (Weapon weapon: weapons) {
-            System.out.println(weapon.getName());
-        }
-        return weapons;
-    }
-    public void setWeapons(Weapon weapon) {
-        this.weapons = weapons;
-        weapons.add(weapon);
-    }
 
     public ArrayList<Potion> getPotions() {
         for (Potion potion: potions) {

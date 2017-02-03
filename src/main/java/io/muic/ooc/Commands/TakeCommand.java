@@ -14,21 +14,22 @@ public class TakeCommand implements Command {
     public void apply(Player player, String args) {
 
         Room room = player.getCurrentRoom();
-        if (args.equals("potion")){
-            if (room.getPotions()!=null){
+        if (args.equals("Potion")){
+            if (room.getPotions().size()!=0){
                 Item potion = new Potion();
-                potion.setName("Potion A");
+                potion.setName("Potion");
                 potion.setHealPoint(5);
                 player.setBag(potion);
-                System.out.println("Potion taken!");
+                room.getPotions().remove(0);
+                System.out.println("  Potion taken!");
             } else {
-                System.out.println("There is no potion here.");
+                System.out.println("  There is no potion here.");
             }
 
         }
         else {
-            System.out.println("No such command. Please try again.");
-            System.out.println("Hint: (take) weapon, (take) potion");
+            System.out.println("  No such command. Please try again.");
+            System.out.println("  Hint: (take) weapon, (take) potion");
         }
     }
 }

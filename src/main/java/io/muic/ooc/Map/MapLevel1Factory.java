@@ -36,7 +36,7 @@ public class MapLevel1Factory extends GameMap implements MapFactory{
         A.setSouthExit(B);
         B.setNorthExit(A);
         B.setEastExit(C);
-        C.setWestExit(C);
+        C.setWestExit(B);
         return rooms;
     }
     @Override
