@@ -1,3 +1,5 @@
+Goal of this game: Gain EXP to the requirement to win! Yay!!
+
 Commands:
 1. info
 2. take {item}
