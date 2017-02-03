@@ -13,7 +13,6 @@ public class AttackCommand implements Command {
     public void apply(Player player, String args) {
         Room room = player.getCurrentRoom();
         MapLevel1Factory level1  = new MapLevel1Factory();
-        int numMon = level1.getNumMonster();
 
         if (args.equals("MonMon")){
             if (room.getMonsters().size()!=0){
@@ -39,12 +38,13 @@ public class AttackCommand implements Command {
                     System.out.println("  You killed the monster. Yay!!");
                     System.out.println("  Gained 2 EXP");
                     player.setExp(playerEXP+2);
-                    level1.setNumMonster(numMon-1);
-                    if (level1.getNumMonster()==0){
+                    int exp = 6-player.getExp();
+                    if (player.getExp()==6){
                         System.out.println("  Congrats! You have killed all the monster");
                         System.out.println("  Now you can proceed to the next level!!");
                         System.exit(0);
                     }
+                    System.out.println("  Quest: Gain "+exp+" more EXP to pass this level");
 
                 }
             }

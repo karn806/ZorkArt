@@ -12,18 +12,6 @@ import java.util.ArrayList;
 
 public class MapLevel1Factory extends GameMap implements MapFactory{
 
-    private int numMonster = 2;
-
-    @Override
-    public int getNumMonster() {
-        return numMonster;
-    }
-
-    @Override
-    public void setNumMonster(int numMonster) {
-        this.numMonster = numMonster;
-    }
-
     @Override
     public ArrayList<Room> createRoom(){
         ArrayList<Room> rooms = new ArrayList<Room>();
@@ -40,12 +28,28 @@ public class MapLevel1Factory extends GameMap implements MapFactory{
         return rooms;
     }
     @Override
-    public Monster createMonster() {
+    public ArrayList<Monster> createMonster() {
+        ArrayList<Monster> monsters = new ArrayList<Monster>();
+
         Monster monster = new Monster();
-        monster.setAtk(2);
+        monster.setAtk(5);
         monster.setHp(10);
         monster.setName("MonMon");
-        return monster;
+        Monster monster1 = new Monster();
+        monster1.setAtk(5);
+        monster1.setHp(10);
+        monster1.setName("MonMon");
+        Monster monster2 = new Monster();
+        monster2.setAtk(5);
+        monster2.setHp(10);
+        monster2.setName("MonMon");
+
+        monsters.add(monster);
+        monsters.add(monster1);
+        monsters.add(monster2);
+
+
+        return monsters;
     }
 
     @Override

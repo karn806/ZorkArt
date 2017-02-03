@@ -19,7 +19,7 @@ public class ZorkGame {
 
     Random random = new Random();
 
-    public void initialize(Player player, String name, ArrayList<Room> rooms, Monster monster,
+    public void initialize(Player player, String name, ArrayList<Room> rooms, ArrayList<Monster> monsters,
                            Item potions){
         player.setAtk(5);
         player.setExp(0);
@@ -28,12 +28,11 @@ public class ZorkGame {
         // random starting room
         Room room = rooms.get(random.nextInt(rooms.size()));
         player.setCurrentRoom(room);
-        // initial weapon for player
-        rooms.get(0).setPotions((Potion) potions);
-        rooms.get(0).setMonsters(monster);
-        rooms.get(1).setPotions((Potion) potions);
-        rooms.get(2).setPotions((Potion) potions);
-        rooms.get(2).setMonsters(monster);
+
+        for (int i = 0; i < monsters.size(); i++) {
+            rooms.get(i).setPotions((Potion) potions);
+            rooms.get(i).setMonsters(monsters.get(i));
+        }
     }
 
     public void start() {
@@ -46,7 +45,7 @@ public class ZorkGame {
         Player player = new Player();
         MapLevel1Factory level1 = new MapLevel1Factory();
         ArrayList<Room> rooms = level1.createRoom();
-        Monster monster = level1.createMonster();
+        ArrayList<Monster> monster = level1.createMonster();
         Item potion = level1.createPotions();
 
         initialize(player, name, rooms, monster, potion);

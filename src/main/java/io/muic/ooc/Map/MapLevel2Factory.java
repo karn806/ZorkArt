@@ -26,12 +26,29 @@ public class MapLevel2Factory extends GameMap implements MapFactory {
         return rooms;
     }
 
-    public Monster createMonster() {
+    @Override
+    public ArrayList<Monster> createMonster() {
+        ArrayList<Monster> monsters = new ArrayList<Monster>();
+
         Monster monster = new Monster();
-        monster.setAtk(2);
-        monster.setHp(10);
+        monster.setAtk(10);
+        monster.setHp(15);
         monster.setName("MonMon");
-        return monster;
+        Monster monster1 = new Monster();
+        monster1.setAtk(10);
+        monster1.setHp(15);
+        monster1.setName("MonMon");
+        Monster monster2 = new Monster();
+        monster2.setAtk(10);
+        monster2.setHp(15);
+        monster2.setName("MonMon");
+
+        monsters.add(monster);
+        monsters.add(monster1);
+        monsters.add(monster2);
+
+
+        return monsters;
     }
 
     @Override

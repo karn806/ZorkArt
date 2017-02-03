@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public interface MapFactory {
     ArrayList<Room> createRoom();
-    Monster createMonster();
+    ArrayList<Monster> createMonster();
     Potion createPotions();
-
 }
