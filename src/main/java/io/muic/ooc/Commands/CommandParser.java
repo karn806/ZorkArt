@@ -10,8 +10,10 @@ public final class CommandParser{
     private static final HashMap<String, Command> commands = new HashMap<String, Command>() {
         {
             // commands are added here using lambdas. It is also possible to dynamically add commands without editing the code.
-            put("player info", new PlayerInfoCommand());
+            put("info", new InfoCommand());
             put("quit", new ExitCommand());
+            put("go", new WalkCommand());
+            put("take", new TakeCommand());
         }
     };
 

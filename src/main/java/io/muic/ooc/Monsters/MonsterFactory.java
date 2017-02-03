@@ -1,7 +1,8 @@
 package io.muic.ooc.Monsters;
 
 /**
- * Created by karn806 on 1/27/17.
+ * Created by karn806 on 2/2/17.
  */
-public class MonsterFactory {
+public class MonsterFactory extends Monster {
+
 }

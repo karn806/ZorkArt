@@ -7,7 +7,7 @@ import io.muic.ooc.Player;
  */
 public class ExitCommand implements Command{
     @Override
-    public void apply(Player player){
+    public void apply(Player player, String args){
         System.exit(0);
     }
 }
