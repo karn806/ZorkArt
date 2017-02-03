@@ -1,6 +1,5 @@
 package io.muic.ooc.Map;
 
-
 import io.muic.ooc.Items.Potion;
 import io.muic.ooc.Items.Weapon;
 import io.muic.ooc.Monsters.Monster;
@@ -8,10 +7,9 @@ import io.muic.ooc.Monsters.Monster;
 import java.util.ArrayList;
 
 /**
- * Created by karn806 on 1/30/17.
+ * Created by karn806 on 2/3/17.
  */
-
-public class MapLevel1Factory implements MapFactory{
+public class MapLevel2Factory implements MapFactory {
 
     @Override
     public ArrayList<Room> createRoom(){
@@ -52,6 +50,4 @@ public class MapLevel1Factory implements MapFactory{
         weapon.setAttackPoint(5);
         return weapon;
     }
-
-
 }

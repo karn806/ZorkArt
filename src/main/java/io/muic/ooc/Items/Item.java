@@ -6,6 +6,25 @@ package io.muic.ooc.Items;
 public abstract class Item {
     String name;
 
+    public int getAttackPoint() {
+        return attackPoint;
+    }
+
+    public void setAttackPoint(int attackPoint) {
+        this.attackPoint = attackPoint;
+    }
+
+    public int getHealPoint() {
+        return healPoint;
+    }
+
+    public void setHealPoint(int healPoint) {
+        this.healPoint = healPoint;
+    }
+
+    private int attackPoint;
+    private int healPoint;
+
     public String getName() {
         return name;
     }

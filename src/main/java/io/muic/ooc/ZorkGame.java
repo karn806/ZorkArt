@@ -2,14 +2,12 @@ package io.muic.ooc;
 
 import io.muic.ooc.Commands.Command;
 import io.muic.ooc.Commands.CommandParser;
-import io.muic.ooc.Items.Potions;
-import io.muic.ooc.Items.Weapon;
+import io.muic.ooc.Items.Item;
+import io.muic.ooc.Items.Potion;
 import io.muic.ooc.Map.MapLevel1Factory;
 import io.muic.ooc.Map.Room;
-import io.muic.ooc.Monsters.MonMon;
 import io.muic.ooc.Monsters.Monster;
 
-import javax.jws.WebParam;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,15 +17,17 @@ import java.util.Scanner;
 public class ZorkGame {
 
     public void initialize(Player player, String name, ArrayList<Room> rooms, Monster monster,
-                           Potions potions, Weapon weapons){
+                           Item potions, Item weapon){
         player.setAtk(10);
         player.setExp(0);
         player.setHp(30);
         player.setName(name);
         player.setCurrentRoom(rooms.get(0));
-        rooms.get(0).setPotions(potions);
-        rooms.get(0).setMonsters((MonMon) monster);
-        rooms.get(2).setPotions(potions);
+        player.setBag(weapon);
+        rooms.get(0).setPotions((Potion) potions);
+        rooms.get(0).setMonsters(monster);
+        rooms.get(2).setPotions((Potion) potions);
+        rooms.get(2).setMonsters(monster);
     }
 
     public void start() {
@@ -37,32 +37,30 @@ public class ZorkGame {
         System.out.println("Zork: What's your name?");
         String name = scanner.nextLine();
         System.out.println("Zork: Hello, "+name);
-
         Player player = new Player();
         MapLevel1Factory level1 = new MapLevel1Factory();
 
         ArrayList<Room> rooms = level1.createRoom();
-        Monster monMon = level1.createMonster();
-        Potions potions = level1.createPotions();
-        Weapon weapons = level1.createWeapon();
+        Monster monster = level1.createMonster();
+        Item potion = level1.createPotions();
+        Item weapon = level1.createWeapon();
 
-        initialize(player, name, rooms, monMon, potions, weapons);
+        initialize(player, name, rooms, monster, potion, weapon);
+
         String argCommand = null;
         Command command;
-
-
 
         boolean quit = false;
         while (!quit) {
             System.out.print(name+": ");
             String commandLine = scanner.nextLine();
+            String cmd = commandLine.split(" ")[0];
+
             if (commandLine.contains(" ")){
-                String cmd = commandLine.split(" ")[0];
                 argCommand = commandLine.split(" ")[1];
-                command = CommandParser.getCommand(cmd);
-            } else {
-                command = CommandParser.getCommand(commandLine);
             }
+
+            command = CommandParser.getCommand(cmd);
 
             if (null == command) {
                 System.out.println("Unknown command [" + commandLine + "]. Available commands: player info, quit.");

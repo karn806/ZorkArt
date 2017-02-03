@@ -1,11 +1,10 @@
 package io.muic.ooc;
 
 import io.muic.ooc.Items.Item;
-import io.muic.ooc.Items.Potions;
+import io.muic.ooc.Items.Potion;
 import io.muic.ooc.Items.Weapon;
 import io.muic.ooc.Map.Room;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -17,30 +16,18 @@ public class Player {
     private int exp;
     private String name;
     private Room currentRoom;
-    private ArrayList<Weapon> weapons = new ArrayList<Weapon>();
-    private ArrayList<Potions> potions = new ArrayList<Potions>();
+//    private ArrayList<Weapon> weapons = new ArrayList<Weapon>();
+//    private ArrayList<Potion> potions = new ArrayList<Potion>();
+    private ArrayList<Item> bag = new ArrayList<Item>();
 
-    public ArrayList<Weapon> getWeapons() {
-        for (Weapon weapon: weapons) {
-            System.out.println(weapon.getName());
-        }
-        return weapons;
+    public ArrayList<Item> getBag() {
+        return bag;
     }
-    public void setWeapons(Weapon weapon) {
-        this.weapons = weapons;
-        weapons.add(weapon);
+    public void setBag(Item item) {
+        this.bag = bag;
+        bag.add(item);
     }
 
-    public ArrayList<Potions> getPotions() {
-        for (Potions potion: potions) {
-            System.out.println(potion.getName());
-        }
-        return potions;
-    }
-    public void setPotions(Potions potion) {
-        this.potions = potions;
-        potions.add(potion);
-    }
 
     public Room getCurrentRoom() {
         return currentRoom;

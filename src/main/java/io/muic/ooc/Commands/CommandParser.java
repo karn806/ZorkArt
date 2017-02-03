@@ -14,6 +14,7 @@ public final class CommandParser{
             put("quit", new ExitCommand());
             put("go", new WalkCommand());
             put("take", new TakeCommand());
+            put("attack", new AttackCommand());
         }
     };
 

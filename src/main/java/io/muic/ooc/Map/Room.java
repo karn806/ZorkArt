@@ -1,9 +1,7 @@
 package io.muic.ooc.Map;
 
-import io.muic.ooc.Items.Item;
-import io.muic.ooc.Items.Potions;
+import io.muic.ooc.Items.Potion;
 import io.muic.ooc.Items.Weapon;
-import io.muic.ooc.Monsters.MonMon;
 import io.muic.ooc.Monsters.Monster;
 
 import java.util.ArrayList;
@@ -17,7 +15,7 @@ public class Room {
     private Room westExit = null;
     private Room eastExit = null;
 //    private ArrayList<Item> items = new ArrayList<Item>();
-    private ArrayList<Potions> potions = new ArrayList<Potions>();
+    private ArrayList<Potion> potions = new ArrayList<Potion>();
     private ArrayList<Weapon> weapons = new ArrayList<Weapon>();
     private ArrayList<Monster> monsters = new ArrayList<Monster>();
 
@@ -32,15 +30,25 @@ public class Room {
         weapons.add(weapon);
     }
 
-    public ArrayList<Potions> getPotions() {
-        for (Potions potion: potions) {
+    public ArrayList<Potion> getPotions() {
+        for (Potion potion: potions) {
             System.out.println(potion.getName());
         }
         return potions;
     }
-    public void setPotions(Potions potion) {
+    public void setPotions(Potion potion) {
         this.potions = potions;
         potions.add(potion);
+    }
+
+    public ArrayList<Monster> getMonsters() {
+        return monsters;
+    }
+
+    public void setMonsters(Monster monster) {
+        this.monsters = monsters;
+        monsters.add(monster);
+
     }
 
     public Room getNorthExit() {
@@ -75,11 +83,5 @@ public class Room {
         this.eastExit = eastExit;
     }
 
-    public ArrayList<Monster> getMonsters() {
-        return monsters;
-    }
 
-    public void setMonsters(MonMon monsters) {
-        this.monsters = monsters;
-    }
 }

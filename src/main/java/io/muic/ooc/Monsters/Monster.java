@@ -3,7 +3,7 @@ package io.muic.ooc.Monsters;
 /**
  * Created by karn806 on 1/27/17.
  */
-public abstract class Monster {
+public class Monster {
     private int hp;
     private int atk;
     private String name;
