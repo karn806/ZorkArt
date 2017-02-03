@@ -4,15 +4,9 @@ package io.muic.ooc.Items;
  * Created by karn806 on 1/27/17.
  */
 public abstract class Item {
+
     String name;
-
-    public int getAttackPoint() {
-        return attackPoint;
-    }
-
-    public void setAttackPoint(int attackPoint) {
-        this.attackPoint = attackPoint;
-    }
+    private int healPoint;
 
     public int getHealPoint() {
         return healPoint;
@@ -22,8 +16,6 @@ public abstract class Item {
         this.healPoint = healPoint;
     }
 
-    private int attackPoint;
-    private int healPoint;
 
     public String getName() {
         return name;

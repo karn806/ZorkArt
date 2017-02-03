@@ -20,8 +20,8 @@ public class ZorkGame {
     Random random = new Random();
 
     public void initialize(Player player, String name, ArrayList<Room> rooms, Monster monster,
-                           Item potions, Item weapon){
-        player.setAtk(10);
+                           Item potions){
+        player.setAtk(5);
         player.setExp(0);
         player.setHp(30);
         player.setName(name);
@@ -29,7 +29,6 @@ public class ZorkGame {
         Room room = rooms.get(random.nextInt(rooms.size()));
         player.setCurrentRoom(room);
         // initial weapon for player
-        player.setBag(weapon);
         rooms.get(0).setPotions((Potion) potions);
         rooms.get(0).setMonsters(monster);
         rooms.get(1).setPotions((Potion) potions);
@@ -49,9 +48,8 @@ public class ZorkGame {
         ArrayList<Room> rooms = level1.createRoom();
         Monster monster = level1.createMonster();
         Item potion = level1.createPotions();
-        Item weapon = level1.createWeapon();
 
-        initialize(player, name, rooms, monster, potion, weapon);
+        initialize(player, name, rooms, monster, potion);
 
         String argCommand = null;
         Command command;

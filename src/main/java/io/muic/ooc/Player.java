@@ -1,8 +1,6 @@
 package io.muic.ooc;
 
 import io.muic.ooc.Items.Item;
-import io.muic.ooc.Items.Potion;
-import io.muic.ooc.Items.Weapon;
 import io.muic.ooc.Map.Room;
 
 import java.util.ArrayList;

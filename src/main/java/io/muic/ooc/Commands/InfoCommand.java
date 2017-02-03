@@ -2,7 +2,6 @@ package io.muic.ooc.Commands;
 
 import io.muic.ooc.Items.Item;
 import io.muic.ooc.Items.Potion;
-import io.muic.ooc.Items.Weapon;
 import io.muic.ooc.Map.Room;
 import io.muic.ooc.Monsters.Monster;
 import io.muic.ooc.Player;
@@ -68,10 +67,6 @@ public class InfoCommand implements Command {
                 System.out.println("   Potions: "+po.next().getName());
             }
 
-            Iterator<Weapon> weap = currentRoom.getWeapons().iterator();
-            while (weap.hasNext()){
-                System.out.println("   Weapons: "+weap.next().getName());
-            }
 
         }
         else {

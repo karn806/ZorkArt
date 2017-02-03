@@ -19,10 +19,11 @@ public class AttackCommand implements Command {
             if (room.getMonsters().size()!=0){
                 Monster mon = room.getMonsters().get(0);
                 int monHP = mon.getHp();
-                System.out.println("Mon hp!!!!!!"+monHP);
+//                System.out.println("Mon hp!!!!!!"+monHP);
                 int monATK = mon.getAtk();
                 int playerATK = player.getAtk();
                 int playerHP = player.getHp();
+                int playerEXP = player.getExp();
                 mon.setHp(playerATK-monHP);
 
                 if (mon.getHp()!=0){
@@ -36,10 +37,12 @@ public class AttackCommand implements Command {
                 } else {
                     room.getMonsters().remove(0);
                     System.out.println("You killed the monster. Yay!!");
+                    System.out.println("Gained 2 EXP");
+                    player.setExp(playerEXP+2);
                     level1.setNumMonster(numMon-1);
                     if (level1.getNumMonster()==0){
                         System.out.println("Congrats! You have killed all the monster");
-                        System.out.println("Now you can proceed to the nect level!!");
+                        System.out.println("Now you can proceed to the next level!!");
                         System.exit(0);
                     }
 

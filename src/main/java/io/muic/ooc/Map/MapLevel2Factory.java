@@ -1,7 +1,6 @@
 package io.muic.ooc.Map;
 
 import io.muic.ooc.Items.Potion;
-import io.muic.ooc.Items.Weapon;
 import io.muic.ooc.Monsters.Monster;
 
 import java.util.ArrayList;
@@ -43,11 +42,4 @@ public class MapLevel2Factory extends GameMap implements MapFactory {
         return potion;
     }
 
-    @Override
-    public Weapon createWeapon(){
-        Weapon weapon = new Weapon();
-        weapon.setName("Sword");
-        weapon.setAttackPoint(5);
-        return weapon;
-    }
 }
